@@ -1,0 +1,23 @@
+[package]
+name = "strake"
+version = "0.1.0"
+edition = "2021"
+authors = ["Aneesh <aneeshkrishnaparthasarathy@gmail.com>"]
+description = "An acoustic phased-array beamforming and synthetic aperture ultrasound imaging workstation driven by array-native APL pipelines"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Aneesh495/strake"
+readme = "README.md"
+keywords = ["beamforming", "phased-array", "ultrasound", "apl", "signal-processing"]
+categories = ["science", "multimedia::audio", "algorithms"]
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+colored = "2.1"
+rayon = "1.10"
+num-complex = "0.4"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"
